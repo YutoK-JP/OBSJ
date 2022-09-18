@@ -216,6 +216,37 @@ namespace OBS_J
             }
         }
 
+        public string GetCurrentGame()
+        {
+            //ゲーム辞書
+            dynamic games = obsConfigJson.GAMES;
+            //保存先フォルダ名の変数
+            string subDir = "";
+
+            //起動中のプロセスを取得
+            foreach (Process p in Process.GetProcesses())
+            {
+                //ウィンドウタイトルを全小文字で取得
+                var Title = p.MainWindowTitle.ToLower();
+                //タイトルが1文字以下の場合はスキップ
+                if (Title.Length < 2) continue;
+                //webブラウザの場合はスキップ
+                if (Title.Contains("chrome") || Title.Contains("edge") || Title.Contains("firefox")) continue;
+
+                foreach (JProperty game in games)
+                {
+                    //ゲーム名を含むかを判定
+                    if (Title.Contains(game.Name.ToLower()))
+                    {
+                        subDir = (string)game.Value;
+                        break;
+                    }
+
+                }
+            }
+            return subDir;
+        }
+
         private async Task RecvEvent(CancellationToken ct)
         {
             //受信結果を格納するインスタンス
@@ -224,7 +255,7 @@ namespace OBS_J
             ArraySegment<Byte> bufferseg;
 
             //ゲーム一覧をjsonオブジェクトとして設定オブジェクトから取得
-            dynamic games = obsConfigJson.GAMES;
+            
 
             while (true)
             {
@@ -246,30 +277,7 @@ namespace OBS_J
                 //リプレイバッファの保存が終了した際の処理
                 if ((string.Compare((string)jsonData.d.eventType, "ReplayBufferSaved") == 0) && SortEnabled)
                 {
-                    //保存先フォルダ名の変数
-                    string subDir = "";
-
-                    //起動中のプロセスを取得
-                    foreach (Process p in Process.GetProcesses())
-                    {
-                        //ウィンドウタイトルを全小文字で取得
-                        var Title = p.MainWindowTitle.ToLower();
-                        //タイトルが1文字以下の場合はスキップ
-                        if (Title.Length < 2) continue;
-                        //webブラウザの場合はスキップ
-                        if (Title.Contains("chrome") || Title.Contains("edge") || Title.Contains("firefox")) continue;
-
-                        foreach (JProperty game in games)
-                        {
-                            //ゲーム名を含むかを判定
-                            if (Title.Contains(game.Name.ToLower()))
-                            {
-                                subDir = (string)game.Value;
-                                break;
-                            }
-
-                        }
-                    }
+                    string subDir = GetCurrentGame();
 
                     //保存先フォルダ名が空でない場合
                     if (subDir.Length > 1)
@@ -305,23 +313,7 @@ namespace OBS_J
                         continue;
 
                     //後の動作はリプレイバッファと同じ
-                    string subDir = "";
-                    foreach (Process p in Process.GetProcesses())
-                    {
-                        var Title = p.MainWindowTitle.ToLower();
-                        if (Title.Length < 2) continue;
-
-                        foreach (JProperty game in games)
-                        {
-                            if (Title.Contains(game.Name))
-                            {
-                                subDir = (string)game.Value;
-                                break;
-                            }
-
-                        }
-
-                    }
+                    string subDir = GetCurrentGame();
 
 
                     if (subDir.Length > 1)

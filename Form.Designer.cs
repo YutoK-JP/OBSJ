@@ -42,6 +42,7 @@
             this.Folders = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SetupButton = new System.Windows.Forms.Button();
             this.SortEnabledButton = new System.Windows.Forms.Button();
+            this.TestGameButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RelationGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,11 +56,11 @@
             this.ConnectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ConnectButton.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConnectButton.ForeColor = System.Drawing.Color.White;
-            this.ConnectButton.Location = new System.Drawing.Point(31, 15);
+            this.ConnectButton.Location = new System.Drawing.Point(12, 9);
             this.ConnectButton.Margin = new System.Windows.Forms.Padding(0);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Padding = new System.Windows.Forms.Padding(2);
-            this.ConnectButton.Size = new System.Drawing.Size(93, 26);
+            this.ConnectButton.Size = new System.Drawing.Size(104, 26);
             this.ConnectButton.TabIndex = 0;
             this.ConnectButton.Text = "Connect";
             this.ConnectButton.UseVisualStyleBackColor = false;
@@ -71,11 +72,11 @@
             this.State_Var.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.State_Var.Font = new System.Drawing.Font("Meiryo UI", 10F, System.Drawing.FontStyle.Bold);
             this.State_Var.ForeColor = System.Drawing.Color.IndianRed;
-            this.State_Var.Location = new System.Drawing.Point(142, 15);
+            this.State_Var.Location = new System.Drawing.Point(126, 9);
             this.State_Var.Margin = new System.Windows.Forms.Padding(0);
             this.State_Var.Name = "State_Var";
             this.State_Var.Padding = new System.Windows.Forms.Padding(2);
-            this.State_Var.Size = new System.Drawing.Size(121, 26);
+            this.State_Var.Size = new System.Drawing.Size(148, 26);
             this.State_Var.TabIndex = 2;
             this.State_Var.Text = "inactive";
             this.State_Var.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -121,7 +122,7 @@
             this.RelationGrid.EnableHeadersVisualStyles = false;
             this.RelationGrid.GridColor = System.Drawing.Color.DimGray;
             this.RelationGrid.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.RelationGrid.Location = new System.Drawing.Point(12, 44);
+            this.RelationGrid.Location = new System.Drawing.Point(12, 38);
             this.RelationGrid.MultiSelect = false;
             this.RelationGrid.Name = "RelationGrid";
             this.RelationGrid.ReadOnly = true;
@@ -137,10 +138,9 @@
             this.RelationGrid.RowHeadersVisible = false;
             this.RelationGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.RelationGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.RelationGrid.Size = new System.Drawing.Size(272, 224);
+            this.RelationGrid.Size = new System.Drawing.Size(262, 233);
             this.RelationGrid.TabIndex = 3;
             this.RelationGrid.TabStop = false;
-            this.RelationGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RelationGrid_CellContentClick);
             // 
             // words
             // 
@@ -181,11 +181,11 @@
             this.SetupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SetupButton.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetupButton.ForeColor = System.Drawing.Color.White;
-            this.SetupButton.Location = new System.Drawing.Point(142, 289);
+            this.SetupButton.Location = new System.Drawing.Point(136, 274);
             this.SetupButton.Margin = new System.Windows.Forms.Padding(0);
             this.SetupButton.Name = "SetupButton";
             this.SetupButton.Padding = new System.Windows.Forms.Padding(2);
-            this.SetupButton.Size = new System.Drawing.Size(142, 26);
+            this.SetupButton.Size = new System.Drawing.Size(138, 26);
             this.SetupButton.TabIndex = 4;
             this.SetupButton.Text = "Open Setup File";
             this.SetupButton.UseVisualStyleBackColor = false;
@@ -201,15 +201,35 @@
             this.SortEnabledButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SortEnabledButton.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SortEnabledButton.ForeColor = System.Drawing.Color.White;
-            this.SortEnabledButton.Location = new System.Drawing.Point(22, 289);
+            this.SortEnabledButton.Location = new System.Drawing.Point(12, 274);
             this.SortEnabledButton.Margin = new System.Windows.Forms.Padding(0);
             this.SortEnabledButton.Name = "SortEnabledButton";
             this.SortEnabledButton.Padding = new System.Windows.Forms.Padding(2);
-            this.SortEnabledButton.Size = new System.Drawing.Size(93, 26);
+            this.SortEnabledButton.Size = new System.Drawing.Size(118, 26);
             this.SortEnabledButton.TabIndex = 5;
             this.SortEnabledButton.Text = "Sort Enable";
             this.SortEnabledButton.UseVisualStyleBackColor = false;
             this.SortEnabledButton.Click += new System.EventHandler(this.SortEnabledButton_Click);
+            // 
+            // TestGameButton
+            // 
+            this.TestGameButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
+            this.TestGameButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
+            this.TestGameButton.FlatAppearance.BorderSize = 0;
+            this.TestGameButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
+            this.TestGameButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(83)))), ((int)(((byte)(94)))));
+            this.TestGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TestGameButton.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestGameButton.ForeColor = System.Drawing.Color.White;
+            this.TestGameButton.Location = new System.Drawing.Point(12, 306);
+            this.TestGameButton.Margin = new System.Windows.Forms.Padding(0);
+            this.TestGameButton.Name = "TestGameButton";
+            this.TestGameButton.Padding = new System.Windows.Forms.Padding(2);
+            this.TestGameButton.Size = new System.Drawing.Size(262, 26);
+            this.TestGameButton.TabIndex = 6;
+            this.TestGameButton.Text = "Highlight Current Game";
+            this.TestGameButton.UseVisualStyleBackColor = false;
+            this.TestGameButton.Click += new System.EventHandler(this.Highlight_Click);
             // 
             // Form1
             // 
@@ -217,7 +237,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(296, 324);
+            this.ClientSize = new System.Drawing.Size(286, 341);
+            this.Controls.Add(this.TestGameButton);
             this.Controls.Add(this.SortEnabledButton);
             this.Controls.Add(this.SetupButton);
             this.Controls.Add(this.RelationGrid);
@@ -244,6 +265,7 @@
         private System.Windows.Forms.Button SortEnabledButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn words;
         private System.Windows.Forms.DataGridViewTextBoxColumn Folders;
+        private System.Windows.Forms.Button TestGameButton;
     }
 }
 

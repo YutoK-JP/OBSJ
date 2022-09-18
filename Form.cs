@@ -205,10 +205,6 @@ namespace OBS_J
             Process.Start(procArg);
         }
 
-        private void RelationGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //グリッドクリック時、処理なし
-        }
 
         private void SortEnabledButton_Click(object sender, EventArgs e)
         {
@@ -220,6 +216,13 @@ namespace OBS_J
 
             //obsインスタンスのソート状態を切り替える
             obs.SortEnabled = !obs.SortEnabled;
+        }
+
+        private void Highlight_Click(object sender, EventArgs e)
+        {
+            string subDir = obs.GetCurrentGame();
+            if (subDir.Length > 2)
+                SavedReceived(sender, subDir);
         }
     }
 
