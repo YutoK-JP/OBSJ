@@ -102,11 +102,12 @@ namespace OBS_J
                         proc.Start();
                         await Task.Delay(2000);
                         //接続ボタンをクリック
-                        ConnectButton.PerformClick();
+                        
                     }
                     catch (Exception er) { Console.WriteLine(er); }
                 }
             }
+            ConnectButton.PerformClick();
         }
         private async void SavedReceived(object sender, string dirName)
         {
@@ -127,8 +128,6 @@ namespace OBS_J
             }
             return;
         }
-
-        
 
         private void SortButtonDisable()
         {
