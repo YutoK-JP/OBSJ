@@ -42,7 +42,7 @@ namespace OBS_J
         {
             SortEnabled = true;
             //jsonファイルは"Documents\OBSJ"内に保存
-            jsonFilePath = @"C:\Users\" + Environment.UserName + @"\Documents\OBSJ\obsj_setting.json";
+            jsonFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "OBSJ\\obsj_setting.json");
 
             //jsonファイルがない場合、プログラムの実行ファイルと同パスにあるオリジナルをコピー
             //この場合メッセージボックスで通知
@@ -62,7 +62,7 @@ namespace OBS_J
 
         private void updateObsConfig()
         {
-            StreamReader sr = new StreamReader(@"C:\Users\" + Environment.UserName + @"\Documents\OBSJ\obsj_setting.json");
+            StreamReader sr = new StreamReader(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "OBSJ\\obsj_setting.json"));
             var textConfig = sr.ReadToEnd();
             sr.Close();
             obsConfigJson = JObject.Parse(textConfig);
@@ -71,7 +71,13 @@ namespace OBS_J
             passwd = (string)obsConfigJson.AUTH.PASSWD;
         }
 
-
+        public void Set_obsPath(string path)
+        {
+            obsConfigJson.OBSDirectory = path;
+            StreamWriter sw = new StreamWriter(jsonFilePath);
+            sw.Write(obsConfigJson.ToString());
+            sw.Close();
+        }
 
 
         //接続メソッド

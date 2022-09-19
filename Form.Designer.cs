@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ConnectButton = new System.Windows.Forms.Button();
             this.State_Var = new System.Windows.Forms.Label();
@@ -43,6 +43,8 @@
             this.SetupButton = new System.Windows.Forms.Button();
             this.SortEnabledButton = new System.Windows.Forms.Button();
             this.TestGameButton = new System.Windows.Forms.Button();
+            this.ReferenceButton = new System.Windows.Forms.Button();
+            this.obsSelectDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.RelationGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             this.ConnectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ConnectButton.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConnectButton.ForeColor = System.Drawing.Color.White;
-            this.ConnectButton.Location = new System.Drawing.Point(12, 9);
+            this.ConnectButton.Location = new System.Drawing.Point(12, 8);
             this.ConnectButton.Margin = new System.Windows.Forms.Padding(0);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Padding = new System.Windows.Forms.Padding(2);
@@ -72,11 +74,11 @@
             this.State_Var.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.State_Var.Font = new System.Drawing.Font("Meiryo UI", 10F, System.Drawing.FontStyle.Bold);
             this.State_Var.ForeColor = System.Drawing.Color.IndianRed;
-            this.State_Var.Location = new System.Drawing.Point(126, 9);
+            this.State_Var.Location = new System.Drawing.Point(126, 8);
             this.State_Var.Margin = new System.Windows.Forms.Padding(0);
             this.State_Var.Name = "State_Var";
             this.State_Var.Padding = new System.Windows.Forms.Padding(2);
-            this.State_Var.Size = new System.Drawing.Size(148, 26);
+            this.State_Var.Size = new System.Drawing.Size(126, 26);
             this.State_Var.TabIndex = 2;
             this.State_Var.Text = "inactive";
             this.State_Var.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -88,8 +90,8 @@
             this.RelationGrid.AllowUserToDeleteRows = false;
             this.RelationGrid.AllowUserToResizeColumns = false;
             this.RelationGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.RelationGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.RelationGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.RelationGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.RelationGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.RelationGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
@@ -97,44 +99,44 @@
             this.RelationGrid.CausesValidation = false;
             this.RelationGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.RelationGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Meiryo UI", 9.75F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.RelationGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Meiryo UI", 9.75F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.RelationGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.RelationGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.RelationGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.words,
             this.Folders});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.RelationGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.RelationGrid.DefaultCellStyle = dataGridViewCellStyle17;
             this.RelationGrid.Enabled = false;
             this.RelationGrid.EnableHeadersVisualStyles = false;
             this.RelationGrid.GridColor = System.Drawing.Color.DimGray;
             this.RelationGrid.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.RelationGrid.Location = new System.Drawing.Point(12, 38);
+            this.RelationGrid.Location = new System.Drawing.Point(257, 8);
             this.RelationGrid.MultiSelect = false;
             this.RelationGrid.Name = "RelationGrid";
             this.RelationGrid.ReadOnly = true;
             this.RelationGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RelationGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RelationGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.RelationGrid.RowHeadersVisible = false;
             this.RelationGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.RelationGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -145,13 +147,13 @@
             // words
             // 
             this.words.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Noto Sans JP Medium", 9.75F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.words.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Noto Sans JP Medium", 9.75F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            this.words.DefaultCellStyle = dataGridViewCellStyle15;
             this.words.FillWeight = 80F;
             this.words.HeaderText = "Search Word";
             this.words.Name = "words";
@@ -160,13 +162,13 @@
             // Folders
             // 
             this.Folders.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Noto Sans JP Medium", 9.75F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.Folders.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Noto Sans JP Medium", 9.75F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.Folders.DefaultCellStyle = dataGridViewCellStyle16;
             this.Folders.HeaderText = "Folder Name";
             this.Folders.Name = "Folders";
             this.Folders.ReadOnly = true;
@@ -181,11 +183,11 @@
             this.SetupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SetupButton.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetupButton.ForeColor = System.Drawing.Color.White;
-            this.SetupButton.Location = new System.Drawing.Point(136, 274);
+            this.SetupButton.Location = new System.Drawing.Point(9, 152);
             this.SetupButton.Margin = new System.Windows.Forms.Padding(0);
             this.SetupButton.Name = "SetupButton";
             this.SetupButton.Padding = new System.Windows.Forms.Padding(2);
-            this.SetupButton.Size = new System.Drawing.Size(138, 26);
+            this.SetupButton.Size = new System.Drawing.Size(243, 26);
             this.SetupButton.TabIndex = 4;
             this.SetupButton.Text = "Open Setup File";
             this.SetupButton.UseVisualStyleBackColor = false;
@@ -201,11 +203,11 @@
             this.SortEnabledButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SortEnabledButton.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SortEnabledButton.ForeColor = System.Drawing.Color.White;
-            this.SortEnabledButton.Location = new System.Drawing.Point(12, 274);
+            this.SortEnabledButton.Location = new System.Drawing.Point(12, 44);
             this.SortEnabledButton.Margin = new System.Windows.Forms.Padding(0);
             this.SortEnabledButton.Name = "SortEnabledButton";
             this.SortEnabledButton.Padding = new System.Windows.Forms.Padding(2);
-            this.SortEnabledButton.Size = new System.Drawing.Size(118, 26);
+            this.SortEnabledButton.Size = new System.Drawing.Size(240, 26);
             this.SortEnabledButton.TabIndex = 5;
             this.SortEnabledButton.Text = "Sort Enable";
             this.SortEnabledButton.UseVisualStyleBackColor = false;
@@ -221,15 +223,40 @@
             this.TestGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TestGameButton.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TestGameButton.ForeColor = System.Drawing.Color.White;
-            this.TestGameButton.Location = new System.Drawing.Point(12, 306);
+            this.TestGameButton.Location = new System.Drawing.Point(12, 80);
             this.TestGameButton.Margin = new System.Windows.Forms.Padding(0);
             this.TestGameButton.Name = "TestGameButton";
             this.TestGameButton.Padding = new System.Windows.Forms.Padding(2);
-            this.TestGameButton.Size = new System.Drawing.Size(262, 26);
+            this.TestGameButton.Size = new System.Drawing.Size(240, 26);
             this.TestGameButton.TabIndex = 6;
             this.TestGameButton.Text = "Highlight Current Game";
             this.TestGameButton.UseVisualStyleBackColor = false;
             this.TestGameButton.Click += new System.EventHandler(this.Highlight_Click);
+            // 
+            // ReferenceButton
+            // 
+            this.ReferenceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
+            this.ReferenceButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(75)))));
+            this.ReferenceButton.FlatAppearance.BorderSize = 0;
+            this.ReferenceButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
+            this.ReferenceButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(83)))), ((int)(((byte)(94)))));
+            this.ReferenceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReferenceButton.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReferenceButton.ForeColor = System.Drawing.Color.White;
+            this.ReferenceButton.Location = new System.Drawing.Point(12, 116);
+            this.ReferenceButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ReferenceButton.Name = "ReferenceButton";
+            this.ReferenceButton.Padding = new System.Windows.Forms.Padding(2);
+            this.ReferenceButton.Size = new System.Drawing.Size(240, 26);
+            this.ReferenceButton.TabIndex = 7;
+            this.ReferenceButton.Text = "Select OBS Studio file";
+            this.ReferenceButton.UseVisualStyleBackColor = false;
+            this.ReferenceButton.Click += new System.EventHandler(this.ReferenceButton_Click);
+            // 
+            // obsSelectDialog
+            // 
+            this.obsSelectDialog.FileName = "obs64.exe";
+            this.obsSelectDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // Form1
             // 
@@ -237,7 +264,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(286, 341);
+            this.ClientSize = new System.Drawing.Size(531, 253);
+            this.Controls.Add(this.ReferenceButton);
             this.Controls.Add(this.TestGameButton);
             this.Controls.Add(this.SortEnabledButton);
             this.Controls.Add(this.SetupButton);
@@ -266,6 +294,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn words;
         private System.Windows.Forms.DataGridViewTextBoxColumn Folders;
         private System.Windows.Forms.Button TestGameButton;
+        private System.Windows.Forms.Button ReferenceButton;
+        private System.Windows.Forms.OpenFileDialog obsSelectDialog;
     }
 }
 

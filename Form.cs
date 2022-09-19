@@ -52,29 +52,8 @@ namespace OBS_J
                 RelationGrid.Rows.Add(game.Name, game.Value);
             }
 
-            //obs本体の起動を確認
-            var obsLaunched = searchOBSProcess();
-            //obsが起動していない場合、起動する
-            if (!obsLaunched)
-            {
-                //obsの設定ファイルから実行ファイルのパスを取得
-                var obsdir = (string)obsconfig.OBSDirectory;
-                //実行ファイルが存在しない場合、起動をスキップ
-                if (File.Exists(Path.Combine(obsdir, "obs64.exe")))
-                {
-                    try
-                    {
-                        var proc = new Process();
-                        proc.StartInfo.WorkingDirectory = obsdir;
-                        proc.StartInfo.FileName = "obs64";
-                        proc.Start();
-                        await Task.Delay(2000);
-                    }
-                    catch (Exception er) { Console.WriteLine(er); }
-                }
-            }
-            //接続ボタンをクリック
-            ConnectButton.PerformClick();
+            await launchOBS((string)obsconfig.OBSDirectory);
+            
         }
 
         private bool searchOBSProcess()
@@ -102,6 +81,32 @@ namespace OBS_J
             }
             //obsが起動していなかった場合、falseを返す
             return false;
+        }
+
+        private async Task launchOBS(string obsdir)
+        {
+            //obs本体の起動を確認
+            var obsLaunched = searchOBSProcess();
+            //obsが起動していない場合、起動する
+            if (!obsLaunched)
+            {
+                //obsの設定ファイルから実行ファイルのパスを取得
+                //実行ファイルが存在しない場合、起動をスキップ
+                if (File.Exists(Path.Combine(obsdir, "obs64.exe")))
+                {
+                    try
+                    {
+                        var proc = new Process();
+                        proc.StartInfo.WorkingDirectory = obsdir;
+                        proc.StartInfo.FileName = "obs64";
+                        proc.Start();
+                        await Task.Delay(2000);
+                        //接続ボタンをクリック
+                        ConnectButton.PerformClick();
+                    }
+                    catch (Exception er) { Console.WriteLine(er); }
+                }
+            }
         }
         private async void SavedReceived(object sender, string dirName)
         {
@@ -223,6 +228,22 @@ namespace OBS_J
             string subDir = obs.GetCurrentGame();
             if (subDir.Length > 2)
                 SavedReceived(sender, subDir);
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private async void ReferenceButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = obsSelectDialog.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                string obsExePath = Path.GetDirectoryName(obsSelectDialog.FileName);
+                obs.Set_obsPath(obsExePath);
+                await launchOBS(obsExePath);                
+            }
         }
     }
 
