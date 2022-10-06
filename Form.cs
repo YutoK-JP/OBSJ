@@ -109,6 +109,7 @@ namespace OBS_J
             }
             ConnectButton.PerformClick();
         }
+
         private async void SavedReceived(object sender, string dirName)
         {
             //保存をobsインスタンスから受け取った時のメソッド
@@ -137,7 +138,6 @@ namespace OBS_J
         {
             SortEnabledButton.BackColor = Color.FromArgb(40,76,184);
         }
-
 
         private async void Connect_Clicked(object sender, EventArgs e)
         {
@@ -209,7 +209,6 @@ namespace OBS_J
             Process.Start(procArg);
         }
 
-
         private void SortEnabledButton_Click(object sender, EventArgs e)
         {
             //ソート有効時、ソートボタン有効化
@@ -243,6 +242,11 @@ namespace OBS_J
                 obs.Set_obsPath(obsExePath);
                 await launchOBS(obsExePath);                
             }
+        }
+
+        private void RelationGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

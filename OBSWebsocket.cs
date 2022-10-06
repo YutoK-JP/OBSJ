@@ -79,7 +79,6 @@ namespace OBS_J
             sw.Close();
         }
 
-
         //接続メソッド
         public async Task<bool> Connect()
         {
@@ -224,6 +223,7 @@ namespace OBS_J
 
         public string GetCurrentGame()
         {
+            Console.WriteLine("P");
             //ゲーム辞書
             dynamic games = obsConfigJson.GAMES;
             //保存先フォルダ名の変数
@@ -239,10 +239,17 @@ namespace OBS_J
                 //webブラウザの場合はスキップ
                 if (Title.Contains("chrome") || Title.Contains("edge") || Title.Contains("firefox")) continue;
 
+                byte[] bytesData = Encoding.UTF8.GetBytes(Title);
+
                 foreach (JProperty game in games)
                 {
                     //ゲーム名を含むかを判定
                     if (Title.Contains(game.Name.ToLower()))
+                    {
+                        subDir = (string)game.Value;
+                        break;
+                    }
+                    else if (p.ProcessName.Contains(game.Name.ToLower()))
                     {
                         subDir = (string)game.Value;
                         break;
@@ -350,7 +357,6 @@ namespace OBS_J
             }
 
         }
-
 
         public WebSocketState State
         {
